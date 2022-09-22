@@ -40,3 +40,25 @@ $posts = [
 ],
 ];
 ?>
+
+<ul>
+    <?php
+    for ($i = 0; $i < count($posts); $i++) {
+        $keys = array_keys($posts);
+        $key = $keys[$i];
+        $post = $posts[$key];
+        
+        for ($j = 0; $j < count($post); $j++) {
+    ?>  
+    
+       <li>
+        <?php 
+        echo "In data: {$key} - Titolo: {$post[$j]['title']} - Autore: {$post[$j]['author']}";
+        ?>
+       </li>
+       <?php 
+        }
+        echo "<br>";
+    }
+    ?>
+</ul>
